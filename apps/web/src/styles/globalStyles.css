@@ -1,21 +1,62 @@
-:root {
-  --border-radius-1: 4px;
-
-  --color-border: hsl(0, 0%, 86%);
-}
-
-html {
-  box-sizing: border-box;
-}
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
 @layer base, components, utils;
 
+:root {
+  --color-font-base: hsl(300, 33%, 99%);
+  --color-icon-base: hsl(279deg 100% 84%);
+  --color-bg-base: hsl(120, 4%, 11%);
+  --color-bg-card: hsl(264, 7%, 14%);
+  --color-bg-card_hover: hsl(270, 15%, 13%);
+  --color-border: hsl(278, 46%, 26%);
+
+  --border-radius-1: 4px;
+  --border-radius-2: 8px;
+  --border-radius-3: 16px;
+
+  --border-radius-circle: 9999px;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-font-base: #1a1c1a;
+    --color-icon-base: hsl(278, 100%, 50%);
+    --color-bg-base: #fefdfe;
+
+    --color-bg-card: #ffffff;
+    --color-bg-card_hover: #fcfaff;
+
+    --color-border: hsl(0, 0%, 86%);
+  }
+}
+
 @layer base {
+  html {
+    box-sizing: border-box;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+  body {
+    padding: 8px;
+    margin: 0px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: var(--color-bg-base);
+    color: var(--color-font-base);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+    color: var(--color-font-base);
+    margin: 0;
+  }
+
   button {
     min-width: 140px;
     padding: 8px;
@@ -23,6 +64,8 @@ html {
 
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius-1);
+  }
+  button:hover {
   }
   input {
     padding: 8px;
@@ -37,7 +80,10 @@ html {
     font-size: 14px;
     font-weight: 500;
   }
-}
-@layer components {
+
+  svg {
+    fill: var(--color-icon-base);
+    color: var(--color-icon-base);
+  }
 }
 

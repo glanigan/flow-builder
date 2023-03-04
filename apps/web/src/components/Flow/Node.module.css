@@ -1,0 +1,19 @@
+.node {
+  width: 100%;
+  padding: 16px 8px;
+  margin: 4px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: var(--color-bg-card);
+
+  transition: background-color 0.2s;
+}
+
+.node:hover {
+  background: var(--color-bg-card_hover);
+  cursor: pointer;
+}
+
